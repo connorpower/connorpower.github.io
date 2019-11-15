@@ -27,22 +27,35 @@
             <div>
         </div>
         <script>
-            var options = {
-                            colorMode: 'color',
-                            compositeOperation: 'lighten',
-                            iterationLimit: 0,
-                            key: 'low',
-                            lineWidth: 2,
-                            lineMode: 'smooth',
-                            origin: ['bottom', '50% 50%', 'top'],
-                            outputSize: 'container',
-                            pathFinderCount: 60,
-                            speed: 7,
-                            turningAngle: Math.PI / 2.0
-                        };
+            var snake = {
+                colorMode: 'color',
+                compositeOperation: 'lighten',
+                iterationLimit: 0,
+                key: 'low',
+                lineWidth: 3,
+                lineMode: 'smooth',
+                origin: ['bottom', '50% 50%', 'top'],
+                outputSize: 'original',
+                pathFinderCount: 40,
+                speed: 8,
+                turningAngle: Math.PI / 2.0
+            };
+            var pipes = {
+                colorMode: 'color',
+                compositeOperation: 'lighten',
+                iterationLimit: 0,
+                key: 'low',
+                lineWidth: 2,
+                lineMode: 'smooth',
+                origin: ['bottom', '50% 50%', 'top'],
+                outputSize: 'original',
+                pathFinderCount: 60,
+                speed: 5,
+                turningAngle: 2.0 * Math.PI
+            };
 
             var imageElement = document.querySelector('.chromata-image');
-            var chromata = new Chromata(imageElement, options);
+            var chromata = new Chromata(imageElement, snake);
             chromata.start();
         </script>
     </body>
